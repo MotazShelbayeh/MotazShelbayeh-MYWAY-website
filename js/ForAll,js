@@ -1,0 +1,59 @@
+// ForAll.js
+
+// كود الهيدر + الفوتر
+document.addEventListener("DOMContentLoaded", function () {
+  // الهيدر
+  const headerHTML = `
+    <div class="header">
+      <div class="inner-header">
+        <!-- الشعار -->
+        <div class="logo-container">
+          <h1><a href="index.html">MY<span>WAY</span></a></h1>
+        </div>
+
+        <!-- أيقونة المينيو -->
+        <div class="menu-toggle" id="menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <!-- القائمة -->
+        <ul class="navigation" id="navigation">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="BookNow.html">Booking</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <!-- أزرار الكمبيوتر -->
+        <div class="right-container desktop-only">
+          <a class="login-btn" href="Login.html">Login</a>
+          <a class="login-btn" href="profile.html">Profile</a>
+        </div>
+      </div>
+    </div>
+  `;
+
+  // الفوتر
+  const footerHTML = `
+    <footer>
+      <p>© ${new Date().getFullYear()} MyWay. All Rights Reserved. | 
+      <a href="contact.html">Contact Us</a></p>
+    </footer>
+  `;
+
+  // إدخال الهيدر في بداية الصفحة
+  document.body.insertAdjacentHTML("afterbegin", headerHTML);
+
+  // إدخال الفوتر في نهاية الصفحة
+  document.body.insertAdjacentHTML("beforeend", footerHTML);
+
+  // كود تشغيل المينيو
+  const menuToggle = document.getElementById('menu-toggle');
+  const navigation = document.getElementById('navigation');
+
+  menuToggle.addEventListener('click', () => {
+    navigation.classList.toggle('active');
+    menuToggle.classList.toggle('open');
+  });
+});

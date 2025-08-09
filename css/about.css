@@ -94,6 +94,7 @@
 }
 
 .about-section{
+    color: rgb(255, 255, 255);
     display: contents;
     align-items: center;
     text-align: left;
@@ -101,6 +102,7 @@
 }
 
 .about-section h1{
+    color: rgb(255, 255, 255);
     align-items: center;
     justify-content: center;
 }

@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Way - Profile</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/profile.css">
+</head>
+<body>
+
+
+  <!-- Profile Section -->
+  <div class="container">
+    <div class="grid">
+      <aside class="profile-card">
+        <div style="display:flex;gap:12px;align-items:center">
+          <div class="avatar"><img src="media/motaz.jpg" alt="avatar"></div>
+          <div>
+            <div class="name">Motaz Shelbayeh</div>
+            <div class="role">User</div>
+          </div>
+        </div>
+        <div class="profile-stats">
+          <div class="stat"><h4>Bookings</h4><p>0</p></div>
+          <div class="stat"><h4>Total Spent</h4><p>$0</p></div>
+          <div class="stat"><h4>Points</h4><p>0</p></div>
+        </div>
+        <div class="actions">
+          <button class="btn">Edit Profile</button>
+          <button class="btn ghost">Messages</button>
+        </div>
+        <div class="links">
+          
+          <a href="#">Logout <span style="color:var(--danger)">Exit</span></a>
+        </div>
+      </aside>
+
+      <main class="main">
+        <section class="card">
+          <div class="welcome">
+            <div>
+              <h2>Welcome, Motaz</h2>
+              <p>User</p>
+            </div>
+          </div>
+          <div class="orders-grid">
+            <div class="mini"><h3>Upcoming Trips</h3><p>0</p></div>
+            <div class="mini"><h3>Cancellations</h3><p>0</p></div>
+            <div class="mini"><h3>Available Coupons</h3><p>0</p></div>
+          </div>
+        </section>
+
+        <section class="card">
+          <h3 style="margin:0 0 8px 0">Recent Bookings</h3>
+          <table>
+            <thead>
+              <tr><th>Booking ID</th><th>Date</th><th>Total</th><th>Status</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>#0003</td><td>Jan 1, 2025</td><td>$1.00</td><td><span class="status s-shipped">Upcoming</span></td></tr>
+              <tr><td>#0002</td><td>Jan 1, 2025</td><td>$1.50</td><td><span class="status s-delivered">Completed</span></td></tr>
+              <tr><td>#0001</td><td>Jan 1, 2025</td><td>$1.00</td><td><span class="status s-pending">Pending</span></td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="card two-cols">
+          <div>
+            <h4 style="margin-top:0">Default Pickup Location</h4>
+            <p style="color:var(--muted);margin:8px 0 14px">Main pickup point</p>
+            <div style="background:rgba(255,255,255,0.05);padding:12px;border-radius:10px">
+              <strong>Main Bus Station — Downtown</strong>
+              <div style="color:var(--muted);margin-top:6px">Amman, Jordan</div>
+              <div style="margin-top:10px"><a href="#" style="color:var(--accent)">Edit Location</a></div>
+            </div>
+          </div>
+
+          <div>
+            <h4 style="margin-top:0">Payment Methods</h4>
+            <p style="color:var(--muted);margin:8px 0 14px">Saved cards</p>
+            <div style="background:rgba(255,255,255,0.05);padding:12px;border-radius:10px">
+              <div style="display:flex;justify-content:space-between;align-items:center">
+                <div>
+                  <div style="font-weight:700">Visa •••• 1234</div>
+                  <div style="color:var(--muted);font-size:13px;margin-top:6px">Expires 12/26</div>
+                </div>
+                <div><a href="#" style="color:var(--accent)">Manage</a></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <script src="js/ForAll,js"></script>
+
+</body>
+</html>
