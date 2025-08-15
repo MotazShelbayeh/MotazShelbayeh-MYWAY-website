@@ -14,148 +14,116 @@
 
 </head>
 <body class="dark-theme">
-    
     <section id="main-content" class="destinations-area">
-
         <div class="container">
-            <div class="row d-flex justify-content-center">
-                <div class="menu-content">
-                    <div class="title text-center">
-                        <h1 class="mb-10">Booking Now</h1>
-                    </div>
-                </div>
+            <div class="title text-center">
+                <h1>Booking Now</h1>
             </div>
-  
-            <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-destinations">
-                        <div class="thumb">
-                            <img src="media/changan.png" alt="">
-                        </div>
-  
-                        <div class="details">
-                            <h4 class="d-flex justify-content-between">
-                                <span>Tafila<p> Alies - WadiZaid</p></span>
-                                <div class="star">
-                                    ★★☆☆☆
-                                </div>
-                            </h4>
-  
-                            <p>Changan Eddo   |   3 chairs available</p>
-                            <div class="seats-grid" aria-label="Seats">
-                                <div class="seat available" data-seat="1" title="Seat 1"></div>
-                                <div class="seat booked"    data-seat="2" title="Seat 2"></div>
-                                <div class="seat available" data-seat="3" title="Seat 3"></div>
-                                <div class="seat available" data-seat="4" title="Seat 4"></div>
-                            </div>
-  
-                            <div style="text-align:center; margin-top:10px;">
-                                <button class="booking-btn" onclick="goToBooking()">Booking</button>
-                                <button class="booking-btn">Edit</button>
-                                <button class="booking-btn">Remove</button>
-                            </div>
-                        </div>
+            <div class="booking-container">
+                <div class="booking-card" data-car="Changan Eddo" data-route="Alies - WadiZaid" data-img="media/changan.png">
+                    <img src="media/changan.png" alt="Changan Eddo" class="car-img">
+                    <h4>Changan Eddo</h4>
+                    <p class="route">Tafila - Alies - WadiZaid</p>
+                    <p class="availability">3 Seats Available</p>
+                    <div class="seats-grid">
+                        <div class="seat available" data-seat="1"></div>
+                        <div class="seat booked" data-seat="2"></div>
+                        <div class="seat available" data-seat="3"></div>
+                        <div class="seat available" data-seat="4"></div>
+                    </div>
+                    <div class="booking-actions">
+                        <button class="booking-btn">Book</button>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-destinations">
-                        <div class="thumb">
-                            <img src="media/kia.png" alt="">
-                        </div>
-  
-                        <div class="details">
-                            <h4 class="d-flex justify-content-between">
-                                <span>Tafila<p> Alies - Emah</p></span>
-                                <div class="star">
-                                    ★★★★☆
-                                </div>
-                            </h4>
-  
-                            <p>Kia Niro   |   1 chairs available</p>
-                            <div class="seats-grid" aria-label="Seats">
-                                <div class="seat booked" data-seat="1" title="Seat 1"></div>
-                                <div class="seat booked"    data-seat="2" title="Seat 2"></div>
-                                <div class="seat booked" data-seat="3" title="Seat 3"></div>
-                                <div class="seat available" data-seat="4" title="Seat 4"></div>
-                            </div>
-  
-                            <div style="text-align:center; margin-top:10px;">
-                                <button class="booking-btn" onclick="goToBooking()">Booking</button>
-                                <button class="booking-btn">Edit</button>
-                                <button class="booking-btn">Remove</button>
-                            </div>
-                        </div>
+                <div class="booking-card" data-car="Kia Niro" data-route="Alies - Emah" data-img="media/kia.png">
+                    <img src="media/kia.png" alt="Kia Niro" class="car-img">
+                    <h4>Kia Niro</h4>
+                    <p class="route">Tafila - Alies - Emah</p>
+                    <p class="availability">1 Seat Available</p>
+                    <div class="seats-grid">
+                        <div class="seat booked" data-seat="1"></div>
+                        <div class="seat booked" data-seat="2"></div>
+                        <div class="seat booked" data-seat="3"></div>
+                        <div class="seat available" data-seat="4"></div>
+                    </div>
+                    <div class="booking-actions">
+                        <button class="booking-btn">Book</button>
                     </div>
                 </div>
-
+                <div class="booking-card" data-car="Kia Niro" data-route="Alies - Emah" data-img="media/kia.png">
+                    <img src="media/hyundaiCreta.png" alt="hyundaiCreta" class="car-img">
+                    <h4>Hyundai Creta</h4>
+                    <p class="route">Tafila - Alies - Emah</p>
+                    <p class="availability">4 Seat Available</p>
+                    <div class="seats-grid">
+                        <div class="seat available" data-seat="1"></div>
+                        <div class="seat available" data-seat="2"></div>
+                        <div class="seat available" data-seat="3"></div>
+                        <div class="seat available" data-seat="4"></div>
+                    </div>
+                    <div class="booking-actions">
+                        <button class="booking-btn">Book</button>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-  
-
-  
-    <!-- Leaflet JS -->
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    
     <script>
-        let selectedSeat = null;
-  
-        // اختيار الكرسي
-        document.querySelectorAll(".seat.available").forEach(seat => {
-            seat.addEventListener("click", function() {
-                document.querySelectorAll(".seat").forEach(s => s.classList.remove("selected"));
-                this.classList.add("selected");
-                selectedSeat = this.dataset.seat;
-            });
-        });
-  
-        // فتح صفحة الحجز
-        function goToBooking() {
-            document.getElementById("main-content").innerHTML = `
-                <div class="booking-container">
-                    <h2 style="text-align:center;">Complete Your Booking</h2>
-                    <div class="booking-layout">
-                        <div class="map-section">
-                            <div id="map"></div>
-                        </div>
-                        <div class="seats-section">
-                            <h3>Select Your Seat</h3>
-                            <div class="seats-grid">
-                                <div class="seat ${selectedSeat == 1 ? 'selected' : 'available'}" data-seat="1" title="Seat 1"></div>
-                                <div class="seat booked" data-seat="2" title="Seat 2"></div>
-                                <div class="seat ${selectedSeat == 3 ? 'selected' : 'available'}" data-seat="3" title="Seat 3"></div>
-                                <div class="seat ${selectedSeat == 4 ? 'selected' : 'available'}" data-seat="4" title="Seat 4"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="booking-details">
-                        <h3>Booking Details</h3>
-                        <p><strong>Destination:</strong> Tafila</p>
-                        <p><strong>Selected Seat:</strong> ${selectedSeat}</p>
-                        <p><strong>Date:</strong> 12 Aug 2025</p>
-                        <p><strong>Time:</strong> 10:00 AM</p>
-                        <button class="booking-btn">Confirm Booking</button>
-                        <button class="back-btn" onclick="location.reload()">Back</button>
+    let selectedSeats = [];
+    
+    function toggleSeat(seat) {
+        if (!seat.classList.contains('booked')) {
+            seat.classList.toggle('selected');
+            const seatNum = seat.dataset.seat;
+            if (selectedSeats.includes(seatNum)) {
+                selectedSeats = selectedSeats.filter(s => s !== seatNum);
+            } else {
+                selectedSeats.push(seatNum);
+            }
+        }
+    }
+    
+    document.querySelectorAll('.seat').forEach(seat => {
+        seat.addEventListener('click', () => toggleSeat(seat));
+    });
+    
+    document.querySelectorAll('.booking-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const card = btn.closest('.booking-card');
+        const carName = card.dataset.car;
+        const route = card.dataset.route;
+        const img = card.dataset.img;
+
+        document.getElementById('main-content').innerHTML = `
+            <div class="container" style="max-width:700px; margin:auto; background:#1e1e1e; padding:20px; border-radius:15px; color:white;">
+                <h2 style="text-align:center; margin-bottom:20px;">Booking Confirmation</h2>
+                <div style="display:flex; gap:20px; flex-wrap:wrap; align-items:center; justify-content:center;">
+                    <img src="${img}" style="width:200px; border-radius:10px;" alt="${carName}">
+                    <div>
+                        <h3>${carName}</h3>
+                        <p><strong>Route:</strong> ${route}</p>
+                        <p><strong>Selected Seats:</strong> ${selectedSeats.join(', ') || 'None'}</p>
                     </div>
                 </div>
-            `;
-  
-            // تفعيل اختيار الكرسي حتى في الصفحة الثانية
-            document.querySelectorAll(".seat.available").forEach(seat => {
-                seat.addEventListener("click", function() {
-                    document.querySelectorAll(".seat").forEach(s => s.classList.remove("selected"));
-                    this.classList.add("selected");
-                    selectedSeat = this.dataset.seat;
-                });
-            });
-  
-            // Initialize map
-            var map = L.map('map').setView([30.833, 35.616], 13);
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                maxZoom: 18
-            }).addTo(map);
-            L.marker([30.833, 35.616]).addTo(map).bindPopup('Tafila - Your Destination').openPopup();
-        }
+                <hr style="margin:20px 0; border-color:rgba(255,255,255,0.2);">
+                <div style="display:flex; gap:20px; align-items:center;">
+                    <img src="media/driver.jpg" style="width:100px; height:100px; border-radius:50%;" alt="Driver">
+                    <div>
+                        <h4>Driver: Ahmed Khalid</h4>
+                        <p><strong>Car Plate:</strong> 12-34567</p>
+                        <p><strong>Phone:</strong> +962 79 123 4567</p>
+                    </div>
+                </div>
+                <hr style="margin:20px 0; border-color:rgba(255,255,255,0.2);">
+                <button onclick="alert('Booking Confirmed!')" style="background:#ff5722; border:none; padding:10px 20px; border-radius:5px; color:white; cursor:pointer;">Confirm Booking</button>
+                <button onclick="location.reload()" style="margin-left:10px; background:#555; border:none; padding:10px 20px; border-radius:5px; color:white; cursor:pointer;">Back</button>
+            </div>
+        `;
+    });
+});
     </script>
+    
     <script src="js/ForAll,js"></script>
 
   </body>
