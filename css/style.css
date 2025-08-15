@@ -11,7 +11,7 @@ figure, header, nav, section, article, aside, footer, figcaption {
 }
 /* Add this to style.css for mobile-only class */
 
-@media (min-width: 869px) {
+@media (min-width: 992px) {
   .mobile-only {
     display: none !important;
   }
@@ -192,7 +192,7 @@ body { font-family: 'Montserrat', sans-serif; }
 }
 
 /* Mobile Adjustments */
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .inner-header {
     width: 100%;
     padding: 0 20px;
@@ -385,7 +385,7 @@ body.dark-theme p {
 }
 
 /* General Mobile Adjustments for Grid */
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   [class*="col-lg-"] {
     flex: 0 0 100%;
     max-width: 100%;
