@@ -11,7 +11,7 @@ figure, header, nav, section, article, aside, footer, figcaption {
 }
 /* Add this to style.css for mobile-only class */
 
-@media (min-width: 769px) {
+@media (min-width: 869px) {
   .mobile-only {
     display: none !important;
   }
