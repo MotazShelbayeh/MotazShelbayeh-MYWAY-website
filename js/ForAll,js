@@ -1,6 +1,5 @@
-// ForAll.js
+// ForAll.js - Updated to include Login and Profile in navigation for mobile
 
-// كود الهيدر + الفوتر
 document.addEventListener("DOMContentLoaded", function () {
   // الهيدر
   const headerHTML = `
@@ -23,6 +22,8 @@ document.addEventListener("DOMContentLoaded", function () {
           <li><a href="index.html">Home</a></li>
           <li><a href="BookNow.html">Booking</a></li>
           <li><a href="contact.html">Contact</a></li>
+          <li class="mobile-only"><a href="Login.html">Login</a></li>
+          <li class="mobile-only"><a href="profile.html">Profile</a></li>
         </ul>
 
         <!-- أزرار الكمبيوتر -->
