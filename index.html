@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/index.css">
   <link rel="stylesheet" href="css/contact.css">
+  <link rel="stylesheet" href="css/booknow.css">
   <title>My Way</title>
 </head>
 <body>
@@ -20,60 +21,23 @@
   </video>
 </div>
 
-<section class="section-gap contact-page">
-  <div class="section-title">
-      <h1>Contact Us</h1>
-      <p>Car Booking Website - Tafila Governorate <br> Web Applications Project - Tafila Technical University - 08/2025</p>
-  </div>
-  <div class="contact-container">
-      <!-- Team Members -->
-      <div class="team-info">
-          <div class="person-card">
-              <img src="media/motaz.jpg" alt="Motaz Shalabaya">
-              <h3>Motaz Shalabaya</h3>
-              <p>Project Developer</p>
-          </div>
-          <div class="person-card">
-              <img src="media/naeem.jpg" alt="Dr. Naeem">
-              <h3>Dr. Naeem</h3>
-              <p>Project Supervisor</p>
-          </div>
-      </div>
+<div id="other-pages"></div>
 
-      <!-- Contact Form -->
-      <div class="contact-form">
-          <h2>Send us a message</h2>
-          <form>
-              <input type="text" name="name" placeholder="Full Name" required>
-              <input type="email" name="email" placeholder="Email Address" required>
-              <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-              <button type="submit" class="booking-btn">Send</button>
-          </form>
-      </div>
+<script>
+  const pages = ["BookNow.html", "contact.html"];
+  const container = document.getElementById("other-pages");
 
-      <!-- Project Description -->
-<div class="project-description">
-  <h2>About the Project</h2>
-  <p>
-      This website is a project for the course <strong>Web Applications Development 1</strong> 
-      at <strong>Tafila Technical University</strong>. It is a fully functional web application 
-      designed to facilitate car booking services within Tafila Governorate. 
-      The platform allows users to easily browse available vehicles, check availability, 
-      and make reservations online.  
-  </p>
-  <p>
-      The main goal of this project is to provide a modern, user-friendly, and efficient solution 
-      for car rental management in the region, making the process faster and more accessible 
-      for both customers and service providers.
-  </p>
-</div>
-  </div>
-</section>
-
-
-
-
-
+  pages.forEach(page => {
+    fetch(page)
+      .then(res => res.text())
+      .then(data => {
+        let section = document.createElement("section");
+        section.innerHTML = data;
+        container.appendChild(section);
+      })
+      .catch(err => console.error("Error loading:", page, err));
+  });
+</script>
 
 
 
